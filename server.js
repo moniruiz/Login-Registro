@@ -22,7 +22,7 @@ let usuarios = [
 app.use(express.urlencoded({extended: true}));
 
 //Middleware busca archivos estaticos imagenes,css,etc
-app.use(express.static(`${__dirname}/cliente` ));
+app.use(express.static(__dirname + "/cliente" ));
 
 //GET inicial retorna a la pagina de login
 app.get("/", function(req, res){
@@ -51,30 +51,31 @@ app.post("/login", function  (req, res){
 
 //Redirige al formulario de Registro
 app.get("/registro", function (req, res){
-    res.sendFile(path.join(__dirname, "cliente/login.html"));
+    res.sendFile(path.join(__dirname, "cliente/registro.html"));
 });
 
 //POST de submit de registro
 app.post("/registro", function (req, res){
-    const usuarioNuevo = req.body.usuario;
-    const contraseñaNueva = req.body.contraseña;
-    const repetirCont= req.body.repetir;
+    const usuario = req.body.usuarioNuevo;
+    const contraseña = req.body.contraseñaNueva;
+    const repetirCont= req.body.repetirContraseña;
     let usuarioRegistrado = false;
     
     for (let i=0; i< usuarios.length; i++){
-        if(usuarioNuevo === usuarios[i].usuario || contraseñaNueva !== repetirCont){
+        if(usuario === usuarios[i].usuarioNuevo || contraseña !== repetirCont){
             usuarioRegistrado = true;
         }
     }
 
     if(usuarioRegistrado){
-        res.sendFile(path.join(__dirname, "cliente/usuarioRegistrado.html"));
+        res.sendFile(path.join(__dirname, "cliente/registro.html"));
     } else {
-        usuarios.push({ usuario : usuarioNuevo, contraseña: contraseñaNueva});
+        usuarios.push({ usuario : usuario, contraseña: contraseña});
+        res.sendFile(path.join(__dirname, "cliente/login.html"));
     }
 });
 
 //Iniciando Servidor
-app.listen(PUERT, function (){
-    console.log(`Iniciando servidor en puerto ${PUERTO}`);
+app.listen(3000, function (){
+    console.log(`Iniciando servidor en puerto 3000`);
 })
