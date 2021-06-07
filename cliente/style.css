@@ -1,0 +1,16 @@
+body{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: thistle;
+}
+form{
+    text-align: center;
+    display: grid;
+}
+h1{
+    text-align: center;
+    color: aquamarine;
+}
+h3{
+    text-align: center;
+}
