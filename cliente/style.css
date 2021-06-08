@@ -1,15 +1,67 @@
-body{
-    font-size: large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: thistle;
+*{
+    width: 100%;
 }
-form{
+body{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #585858;
+}
+.form{
+    width: 300px;
+    padding: 40px;
+    margin-top: 30px;
+    background: url(/imagen/fondo.jpg)no-repeat 0px 0px;
+    background-size: cover;
+    background-position: center;
+    border-top: 6px solid #ff0088;
     text-align: center;
+}
+.form h2{
+    color:azure;
+    font-weight: 500;
+    font-size: 30px;
+}
+.controls{
+    border: 0px;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #ff0088;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 2s;
+}
+.controls :focus{
+    width: 280px;
+    border-color: #ffff;
+}
+.form button{
+    border: 0;
+    background:lightslategrey;
+    cursor: pointer;
+}
+.form button :hover{
+    background: none;
+}
+.form h3{
+    color: aliceblue;
+}
+.form a{
+    text-decoration:none;
 }
 h1{
+    font-size: 80px;
+    color: #ff9988;
     text-align: center;
-    color: aquamarine;
-}
-h3{
-    text-align: center;
+    box-shadow: azure;
+
 }
